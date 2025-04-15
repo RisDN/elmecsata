@@ -1,0 +1,63 @@
+{
+<<<<<<< HEAD
+    "version": "7",
+    "dialect": "postgresql",
+    "entries": [
+        {
+            "idx": 0,
+            "version": "7",
+            "when": 1726414236743,
+            "tag": "0000_friendly_argent",
+            "breakpoints": true
+        },
+        {
+            "idx": 1,
+            "version": "7",
+            "when": 1730054138713,
+            "tag": "0001_odd_amazoness",
+            "breakpoints": true
+        },
+        {
+            "idx": 2,
+            "version": "7",
+            "when": 1730072056157,
+            "tag": "0002_lowly_valeria_richards",
+            "breakpoints": true
+        }
+    ]
+}
+=======
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1726414236743,
+      "tag": "0000_friendly_argent",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1730054138713,
+      "tag": "0001_odd_amazoness",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1730072056157,
+      "tag": "0002_lowly_valeria_richards",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1731918296088,
+      "tag": "0003_blue_tiger_shark",
+      "breakpoints": true
+    }
+  ]
+}
+>>>>>>> origin/main

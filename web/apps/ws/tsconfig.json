@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "lib": ["ESNext", "DOM"],
+        "target": "ES6",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "paths": {
+            "@elmecsata/types": ["../../packages/types"]
+        }
+    }
+}

@@ -1,0 +1,273 @@
+{
+    "id": "01161f70-7078-4caf-9794-1da9f3eb8821",
+    "prevId": "f7f4e781-f8d8-4397-90f5-b117dffb2fb6",
+    "version": "7",
+    "dialect": "postgresql",
+    "tables": {
+        "public.multiple_choice_questions": {
+            "name": "multiple_choice_questions",
+            "schema": "",
+            "columns": {
+                "question_id": {
+                    "name": "question_id",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "choice": {
+                    "name": "choice",
+                    "type": "varchar(255)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "is_correct": {
+                    "name": "is_correct",
+                    "type": "boolean",
+                    "primaryKey": false,
+                    "notNull": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "multiple_choice_questions_question_id_quiz_questions_quiz_questions_id_fk": {
+                    "name": "multiple_choice_questions_question_id_quiz_questions_quiz_questions_id_fk",
+                    "tableFrom": "multiple_choice_questions",
+                    "tableTo": "quiz_questions",
+                    "columnsFrom": ["question_id"],
+                    "columnsTo": ["quiz_questions_id"],
+                    "onDelete": "no action",
+                    "onUpdate": "no action"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "public.ordering_questions": {
+            "name": "ordering_questions",
+            "schema": "",
+            "columns": {
+                "question_id": {
+                    "name": "question_id",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "choice": {
+                    "name": "choice",
+                    "type": "varchar(255)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "correct_order": {
+                    "name": "correct_order",
+                    "type": "jsonb",
+                    "primaryKey": false,
+                    "notNull": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "ordering_questions_question_id_quiz_questions_quiz_questions_id_fk": {
+                    "name": "ordering_questions_question_id_quiz_questions_quiz_questions_id_fk",
+                    "tableFrom": "ordering_questions",
+                    "tableTo": "quiz_questions",
+                    "columnsFrom": ["question_id"],
+                    "columnsTo": ["quiz_questions_id"],
+                    "onDelete": "no action",
+                    "onUpdate": "no action"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "public.quiz_questions": {
+            "name": "quiz_questions",
+            "schema": "",
+            "columns": {
+                "quiz_questions_id": {
+                    "name": "quiz_questions_id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "quiz_id": {
+                    "name": "quiz_id",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "question": {
+                    "name": "question",
+                    "type": "varchar(255)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "image": {
+                    "name": "image",
+                    "type": "varchar(48)",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "type": {
+                    "name": "type",
+                    "type": "quiz_types",
+                    "typeSchema": "public",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "order": {
+                    "name": "order",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "quiz_questions_quiz_id_quizzes_quiz_id_fk": {
+                    "name": "quiz_questions_quiz_id_quizzes_quiz_id_fk",
+                    "tableFrom": "quiz_questions",
+                    "tableTo": "quizzes",
+                    "columnsFrom": ["quiz_id"],
+                    "columnsTo": ["quiz_id"],
+                    "onDelete": "no action",
+                    "onUpdate": "no action"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "public.quizzes": {
+            "name": "quizzes",
+            "schema": "",
+            "columns": {
+                "quiz_id": {
+                    "name": "quiz_id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "name": {
+                    "name": "name",
+                    "type": "varchar(30)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "banner": {
+                    "name": "banner",
+                    "type": "varchar(48)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "creator": {
+                    "name": "creator",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "created_at": {
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "default": "now()"
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "quizzes_creator_users_user_id_fk": {
+                    "name": "quizzes_creator_users_user_id_fk",
+                    "tableFrom": "quizzes",
+                    "tableTo": "users",
+                    "columnsFrom": ["creator"],
+                    "columnsTo": ["user_id"],
+                    "onDelete": "no action",
+                    "onUpdate": "no action"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "public.true_false_questions": {
+            "name": "true_false_questions",
+            "schema": "",
+            "columns": {
+                "question_id": {
+                    "name": "question_id",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "is_true": {
+                    "name": "is_true",
+                    "type": "boolean",
+                    "primaryKey": false,
+                    "notNull": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "true_false_questions_question_id_quiz_questions_quiz_questions_id_fk": {
+                    "name": "true_false_questions_question_id_quiz_questions_quiz_questions_id_fk",
+                    "tableFrom": "true_false_questions",
+                    "tableTo": "quiz_questions",
+                    "columnsFrom": ["question_id"],
+                    "columnsTo": ["quiz_questions_id"],
+                    "onDelete": "no action",
+                    "onUpdate": "no action"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "public.users": {
+            "name": "users",
+            "schema": "",
+            "columns": {
+                "user_id": {
+                    "name": "user_id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "username": {
+                    "name": "username",
+                    "type": "varchar(15)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "password": {
+                    "name": "password",
+                    "type": "varchar(60)",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "created_at": {
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "default": "now()"
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        }
+    },
+    "enums": {
+        "public.quiz_types": {
+            "name": "quiz_types",
+            "schema": "public",
+            "values": ["true_false", "multiple_choice", "order_list"]
+        }
+    },
+    "schemas": {},
+    "sequences": {},
+    "_meta": {
+        "columns": {},
+        "schemas": {},
+        "tables": {}
+    }
+}

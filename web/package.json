@@ -1,0 +1,21 @@
+{
+  "name": "elmecsata",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently --prefix-colors blue,magenta --prefix {time}: --timestampFormat HH:mm:ss \"npm run dev -w apps/ws\" \"npm run dev -w apps/next\"",
+    "migrations:generate": "pnpm --filter @elmecsata/database drizzle-kit generate",
+    "migrations:push": "pnpm --filter @elmecsata/database drizzle-kit push",
+    "migrations:drop": "pnpm --filter @elmecsata/database drizzle-kit drop",
+    "migrations:migrate": "pnpm --filter @elmecsata/database drizzle-kit migrate"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "prettier": "^3.3.3"
+  }
+}

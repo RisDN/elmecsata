@@ -1,0 +1,317 @@
+{
+    "id": "79fbac2a-053f-4f60-a666-030841bceb83",
+    "prevId": "5d93be69-080f-46a8-80d7-185453d975c1",
+    "version": "5",
+    "dialect": "mysql",
+    "tables": {
+        "continents": {
+            "name": "continents",
+            "columns": {
+                "continent_id": {
+                    "name": "continent_id",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": true
+                },
+                "continent": {
+                    "name": "continent",
+                    "type": "varchar(20)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {
+                "continents_continent_id": {
+                    "name": "continents_continent_id",
+                    "columns": ["continent_id"]
+                }
+            },
+            "uniqueConstraints": {},
+            "checkConstraint": {}
+        },
+        "countries": {
+            "name": "countries",
+            "columns": {
+                "country_id": {
+                    "name": "country_id",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": true
+                },
+                "continent": {
+                    "name": "continent",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "country": {
+                    "name": "country",
+                    "type": "varchar(20)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "country_code": {
+                    "name": "country_code",
+                    "type": "varchar(2)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "countries_continent_continents_continent_id_fk": {
+                    "name": "countries_continent_continents_continent_id_fk",
+                    "tableFrom": "countries",
+                    "columnsFrom": ["continent"],
+                    "tableTo": "continents",
+                    "columnsTo": ["continent_id"],
+                    "onUpdate": "no action",
+                    "onDelete": "no action"
+                }
+            },
+            "compositePrimaryKeys": {
+                "countries_country_id": {
+                    "name": "countries_country_id",
+                    "columns": ["country_id"]
+                }
+            },
+            "uniqueConstraints": {},
+            "checkConstraint": {}
+        },
+        "quiz_tags": {
+            "name": "quiz_tags",
+            "columns": {
+                "quiz_tag_id": {
+                    "name": "quiz_tag_id",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": true
+                },
+                "tag": {
+                    "name": "tag",
+                    "type": "varchar(50)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "label": {
+                    "name": "label",
+                    "type": "varchar(50)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "color": {
+                    "name": "color",
+                    "type": "varchar(50)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {
+                "quiz_tags_quiz_tag_id": {
+                    "name": "quiz_tags_quiz_tag_id",
+                    "columns": ["quiz_tag_id"]
+                }
+            },
+            "uniqueConstraints": {},
+            "checkConstraint": {}
+        },
+        "quizzes": {
+            "name": "quizzes",
+            "columns": {
+                "quiz_id": {
+                    "name": "quiz_id",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": true
+                },
+                "name": {
+                    "name": "name",
+                    "type": "varchar(30)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "icon": {
+                    "name": "icon",
+                    "type": "varchar(48)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "banner": {
+                    "name": "banner",
+                    "type": "varchar(48)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "description": {
+                    "name": "description",
+                    "type": "varchar(255)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "creator": {
+                    "name": "creator",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "tags": {
+                    "name": "tags",
+                    "type": "json",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "country": {
+                    "name": "country",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "isPrivate": {
+                    "name": "isPrivate",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "questions": {
+                    "name": "questions",
+                    "type": "json",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "created_at": {
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "autoincrement": false,
+                    "default": "(now())"
+                },
+                "updated_at": {
+                    "name": "updated_at",
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "autoincrement": false,
+                    "default": "(now())",
+                    "onUpdate": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "quizzes_creator_users_user_id_fk": {
+                    "name": "quizzes_creator_users_user_id_fk",
+                    "tableFrom": "quizzes",
+                    "columnsFrom": ["creator"],
+                    "tableTo": "users",
+                    "columnsTo": ["user_id"],
+                    "onUpdate": "no action",
+                    "onDelete": "no action"
+                },
+                "quizzes_country_countries_country_id_fk": {
+                    "name": "quizzes_country_countries_country_id_fk",
+                    "tableFrom": "quizzes",
+                    "columnsFrom": ["country"],
+                    "tableTo": "countries",
+                    "columnsTo": ["country_id"],
+                    "onUpdate": "no action",
+                    "onDelete": "no action"
+                }
+            },
+            "compositePrimaryKeys": {
+                "quizzes_quiz_id": {
+                    "name": "quizzes_quiz_id",
+                    "columns": ["quiz_id"]
+                }
+            },
+            "uniqueConstraints": {},
+            "checkConstraint": {}
+        },
+        "users": {
+            "name": "users",
+            "columns": {
+                "user_id": {
+                    "name": "user_id",
+                    "type": "int",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": true
+                },
+                "username": {
+                    "name": "username",
+                    "type": "varchar(15)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "password": {
+                    "name": "password",
+                    "type": "varchar(60)",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "created_at": {
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "autoincrement": false,
+                    "default": "(now())"
+                },
+                "updated_at": {
+                    "name": "updated_at",
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "autoincrement": false,
+                    "default": "(now())",
+                    "onUpdate": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {
+                "users_user_id": {
+                    "name": "users_user_id",
+                    "columns": ["user_id"]
+                }
+            },
+            "uniqueConstraints": {},
+            "checkConstraint": {}
+        }
+    },
+    "views": {},
+    "_meta": {
+        "columns": {},
+        "schemas": {},
+        "tables": {}
+    },
+    "internal": {
+        "tables": {},
+        "indexes": {}
+    }
+}

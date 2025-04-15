@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1740330354474,
+      "tag": "0000_loving_robbie_robertson",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1740330394463,
+      "tag": "0001_continents",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1740330402287,
+      "tag": "0002_countries",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1740330409267,
+      "tag": "0003_quiztags",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1740587143277,
+      "tag": "0004_delete_duplicated_spanish",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1740846586845,
+      "tag": "0005_fast_iron_lad",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1741368281917,
+      "tag": "0006_eminent_penance",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1741446258950,
+      "tag": "0007_handy_mesmero",
+      "breakpoints": true
+    }
+  ]
+}

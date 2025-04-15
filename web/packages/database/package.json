@@ -1,0 +1,22 @@
+{
+    "name": "@elmecsata/database",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "type": "module",
+    "scripts": {
+        "drizzle-kit": "drizzle-kit"
+    },
+    "dependencies": {
+        "@elmecsata/types": "workspace:^",
+        "@types/lodash": "^4.17.16",
+        "dotenv": "^16.4.5",
+        "drizzle-orm": "^0.40.0",
+        "lodash": "^4.17.21",
+        "mysql2": "^3.12.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.9",
+        "drizzle-kit": "^0.28.1",
+        "prettier": "^3.3.3"
+    }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Mi magyarország fővárosa?",
+    "type": "quiz",
+    "answers": [
+      {
+        "id": "bfe88a2a-04d5-423f-9b5b-54a602a01080",
+        "text": "Vecsés",
+        "isCorrect": false
+      },
+      {
+        "id": "caeae9c2-3832-4d60-92a7-af15e67d9f3a",
+        "text": "Budapest",
+        "isCorrect": true
+      },
+      {
+        "id": "8264d29c-d733-4b2c-ae3b-44e20fa036d7",
+        "text": "Debrecen",
+        "isCorrect": false
+      },
+      {
+        "id": "8c91e3c8-4a3f-4ba6-880d-a6c7fc1e494f",
+        "text": "Pozsony",
+        "isCorrect": false
+      }
+    ],
+    "duration": 10
+  },
+  {
+    "id": "3",
+    "title": "Új szöveges slide",
+    "type": "slide",
+    "content": "Add meg a slide tartalmát...",
+    "answers": [],
+    "duration": 10
+  }
+]

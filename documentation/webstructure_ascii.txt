@@ -1,0 +1,24 @@
+
+web/				  # A repository-ban lévő weboldal mappa.
+├── apps/
+│   ├── next/                     # Next.js frontend alkalmazás
+│   │   ├── app/		  	# Útvonalak
+│   │   ├── lib/		  	# Komponensek, segéd metódusok
+│   │   └── public/               	# Statikus fájlok (pl. képek, favicon stb.)
+│   └── ws/                       # WebSocket szerver
+│       ├── api/                  	# API útvonalak (endpointok)
+│       └── src/                  	# WebSocket és játék lejátszás logika (pl. handler-ek, util-ok)
+├── packages/
+│   ├── database/                 # Adatbázisréteg Drizzle ORM-mal
+│   │   ├── migrations/           	# SQL migrációs fájlok (verziózott séma változások)
+│   │   └── queries/              # Lekézdező metódusok:
+│   │       ├── countries/        	# Országokkal kapcsolatos lekérdezések
+│   │       ├── quiz/             	# Kvíz alaplogika lekérdezései
+│   │       ├── quiztags/         	# Kvízcímkékhez kapcsolódó SQL-ek
+│   │       └── users/            	# Felhasználók lekérdezései
+│   └── types/                    	# Megosztott TypeScript típusdefiníciók
+├── .                             # Gyökér: monorepo konfigurációs fájlok (pnpm, git stb.)
+
+
+
+

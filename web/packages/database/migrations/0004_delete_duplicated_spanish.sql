@@ -1,0 +1,1 @@
+DELETE FROM `elmecsata`.`countries` WHERE  `country_id`=13;
