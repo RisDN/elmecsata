@@ -6,13 +6,15 @@ import { ModeToggle } from '@/app/ToggleThemeButton';
 
 interface HostPageProps {
     params: Promise<{ code: string }>;
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export default async function HostPage({ params, searchParams }: HostPageProps) {
     const resolvedParams = await params;
+    const resolvedSearchParams = await searchParams;
     const { code } = resolvedParams;
-    const start = searchParams.start === 'true';
+    const start = resolvedSearchParams.start === 'true';
+
 
     const game = await getGame(code);
 
