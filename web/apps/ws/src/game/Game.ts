@@ -124,7 +124,7 @@ export const addPlayer = (player: Player, code: string, socket: Socket): Game | 
 
 export const startGame = async (quiz: Quiz, hostId: string): Promise<Game> => {
     const code = generateCode();
-    const qrCode = await QRCodeToDataURL(`http://localhost:3000/session/${code}`, {
+    const qrCode = await QRCodeToDataURL(`https://elmecsata.hu/session/${code}`, {
         errorCorrectionLevel: 'H',
         type: 'image/webp',
         margin: 2,
