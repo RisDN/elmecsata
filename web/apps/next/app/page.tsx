@@ -303,7 +303,7 @@ export default function Home() {
                                         <li>
                                             <Link
                                                 className='cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200'
-                                                href='/docs'
+                                                href='/docs.pdf'
                                             >
                                                 Dokumentáció
                                             </Link>
