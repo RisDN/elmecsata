@@ -4,6 +4,7 @@
   "workspaces": [
     "apps/*"
   ],
+  "packageManager": "pnpm@10.8.1",
   "scripts": {
     "dev": "concurrently --prefix-colors blue,magenta --prefix {time}: --timestampFormat HH:mm:ss \"npm run dev -w apps/ws\" \"npm run dev -w apps/next\"",
     "migrations:generate": "pnpm --filter @elmecsata/database drizzle-kit generate",
