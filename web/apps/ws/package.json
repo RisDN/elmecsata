@@ -1,5 +1,5 @@
 {
-    "name": "ws-elmecsata",
+    "name": "@elmecsata/ws",
     "version": "1.0.0",
     "scripts": {
         "dev": "bun --watch src/index.ts",
