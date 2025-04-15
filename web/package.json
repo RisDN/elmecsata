@@ -17,6 +17,7 @@
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "next": "15.2.2"
   }
 }
