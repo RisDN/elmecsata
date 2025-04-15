@@ -1,1 +1,1 @@
-export const socketUrl = 'http://localhost:3001';
+export const socketUrl = 'https://elmecsata-production.up.railway.app';
